@@ -1,0 +1,52 @@
+<apex:page id="DeleteLeadInfo" controller="DeleteLeadController" showHeader="false">
+    <html>
+    <head>
+        <meta charset="UTF-8"/>
+        <apex:stylesheet value="{!$Resource.web2lead}"/>
+    </head>
+    <body>
+    <div class="company-name">{!$Label.Company_Name}</div>
+    <div class="ring">
+        <i style="--clr:#00ff0a;"></i>
+        <i style="--clr:#ff0057;"></i>
+        <i style="--clr:#fffd44;"></i>
+        <div class="form-container">
+            <div id="confirmationMessage" class="center-text white-text larger-text">
+                <h2 style="font-size:2em; margin-left: 0px">{!$Label.Delete_Lead_Confirmation_Message}</h2>
+                <p>{!$Label.Action_Cannot_Be_Undone_Message}</p>
+            </div>
+            <apex:form>
+                <div class="inputBx">
+                    <apex:commandButton value="{!$Label.Delete_Lead_Button}" action="{!sendEmailToDeleteLead}"
+                                        styleClass="delete-button"/>
+                </div>
+                <apex:pageMessages/>
+                <div class="inputBx">
+                    <apex:commandButton value="{!$Label.Cancel_Button}" action="{!cancel}" styleClass="cancel-button"/>
+                </div>
+            </apex:form>
+            <div class="loader" id="loader">
+                <div class="lds-roller">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function showLoader() {
+            document.getElementById('loader').style.visibility = 'visible';
+        }
+        var deleteButton = document.querySelector('.delete-button');
+        deleteButton.addEventListener('click', showLoader);
+
+    </script>
+    </body>
+    </html>
+</apex:page>

@@ -1,0 +1,21 @@
+<apex:page controller="RandomLeadController">
+    <apex:stylesheet value="{!$Resource.customStyles}"/>
+    <apex:form>
+        <div class="page-block-container">
+            <apex:pageBlock title="{!pageTitle}" id="randomLeadsBlock">
+                <apex:pageBlockTable value="{!randomLeads}" var="lead" styleClass="custom-table">
+                    <apex:column value="{!lead.Name}" headerValue="{!nameHeader}"/>
+                    <apex:column value="{!lead.Company}" headerValue="{!companyHeader}"/>
+                    <apex:column value="{!lead.Email}" headerValue="{!emailHeader}"/>
+                    <apex:column value="{!lead.Industry}" headerValue="{!industryHeader}"/>
+                    <apex:column value="{!lead.CreatedDate}" headerValue="{!createdDateHeader}"/>
+                </apex:pageBlockTable>
+            </apex:pageBlock>
+            <apex:outputPanel styleClass="center-button-section">
+                <div class="centered-button">
+                    <apex:commandButton value="{!reloadButtonLabel}" action="{!refreshPage}"/>
+                </div>
+            </apex:outputPanel>
+        </div>
+    </apex:form>
+</apex:page>

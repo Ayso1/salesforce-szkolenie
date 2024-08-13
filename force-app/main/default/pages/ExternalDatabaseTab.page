@@ -1,0 +1,134 @@
+<apex:page showHeader="false" sidebar="false" standardStyleSheets="false" controller="ExternalDatabaseController"
+           id="ExternalDatabaseTab">
+    <apex:stylesheet value="{!$Resource.externalDatabase}"/>
+    <apex:form>
+        <apex:pageBlock>
+            <div class="header-section">
+                <div class="header-title">{!$Label.External_Database_Title}</div>
+                <div class="header-actions">
+                    <apex:inputText value="{!searchKeyword}" styleClass="search-input"/>
+                    <apex:commandButton styleClass="search-button" action="{!search}" value="{!$Label.Search_Label}"/>
+                    <apex:commandButton styleClass="clear-button" action="{!clear}" value="{!$Label.Clear_Label}"/>
+                </div>
+            </div>
+            <div class="custom-table-wrapper">
+                <div class="custom-table">
+                    <div class="header-row">
+                        <div class="header-cell row-number-col">#</div>
+                        <div class="header-cell name-col">{!$Label.Name_Label}</div>
+                        <div class="header-cell email-col">{!$Label.Email_Label}</div>
+                        <div class="header-cell company-col">{!$Label.Company_Label}</div>
+                        <div class="header-cell actions-col">{!$Label.Action_Label}</div>
+                    </div>
+
+                    <apex:variable var="rowNum" value="{!0}"/>
+                    <apex:repeat value="{!leads}" var="lead">
+                        <apex:variable var="rowNum" value="{!rowNum + 1}"/>
+                        <div class="data-row">
+                            <div class="data-cell row-number-col">{!rowNum}</div>
+                            <div class="data-cell name-col">{!lead.Name}</div>
+                            <div class="data-cell email-col">{!lead.Email}</div>
+                            <div class="data-cell company-col">{!lead.Company}</div>
+                            <div class="data-cell actions-col">
+                                <div style="display: flex; justify-content: space-around;">
+                                    <apex:commandButton styleClass="edit-button" value="{!$Label.Edit_Label}"
+                                                        onclick="openModal('{!lead.Id}'); return false;"
+                                                        style="margin-right: 10px;">
+                                        <apex:param name="leadId" value="{!lead.Id}" assignTo="{!lead.Id}"/>
+                                    </apex:commandButton>
+                                    <apex:commandButton styleClass="delete-button" value="{!$Label.Delete_Label}"
+                                                        onclick="deleteLead('{!lead.Id}');">
+                                        <apex:param name="leadId" value="{!lead.Id}" assignTo="{!lead.Id}"/>
+                                    </apex:commandButton>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="myModal" class="modal">
+                            <div class="modal-content">
+                                <span class="close" onclick="closeModal()">&times;</span>
+                                <h2 style="font-size: large ">{!$Label.Edit_Lead_Label}</h2>
+                                <form id="editLeadForm">
+                                    <div class="form-group">
+                                        <label for="firstName">{!$Label.First_Name_Label}</label>
+                                        <input type="text" id="firstName" value="{!lead.FirstName}" name="firstName"/>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="lastName">{!$Label.Last_Name_Label} *</label>
+                                        <input type="text" id="lastName" value="{!lead.LastName}" name="lastName"/>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="email">{!$Label.Email_Label} *</label>
+                                        <input type="email" id="email" value="{!lead.Email}" name="email"/>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="company">{!$Label.Company_Label}</label>
+                                        <input type="text" id="company" value="{!lead.Company}" name="company"/>
+                                    </div>
+                                    <div class="buttons">
+                                        <button type="submit" onclick="submitModal('{!lead.Id}');"
+                                                class="save">{!$Label.Save_Label}
+                                        </button>
+                                        <button type="button" class="closebutton"
+                                                onclick="closeModal()">{!$Label.Close_Label}</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </apex:repeat>
+                </div>
+                <apex:outputPanel rendered="{!ISNULL(leads) || leads.size == 0}" styleClass="no-items-wrapper">
+                    <div class="no-items-message">{!$Label.No_Items_Text}</div>
+                </apex:outputPanel>
+            </div>
+            <script>
+                var modal = document.getElementById("myModal");
+
+                function openModal(leadId) {
+                    modal.style.display = "block";
+                }
+
+                function closeModal() {
+                    modal.style.display = "none";
+                }
+
+                window.onclick = function(event) {
+                    if (event.target == modal) {
+                        modal.style.display = "none";
+                    }
+                }
+
+                function submitModal(leadId){
+                    var firstNameElement = document.querySelector('#firstName');
+                    var lastNameElement = document.querySelector('#lastName');
+                    var emailElement =  document.querySelector('#email');
+                    var companyElement =  document.querySelector('#company');
+                    let lead = {
+                        "attributes": {
+                          "type": "Lead",
+                    },
+                    "Id": leadId,
+                    "FirstName": firstNameElement.value,
+                    "LastName": lastNameElement.value,
+                    "Email": emailElement.value,
+                    "Company": companyElement.value
+                    };
+                     Visualforce.remoting.Manager.invokeAction(
+                    '{! $RemoteAction.ExternalDatabaseController.updateLead }',
+                        JSON.stringify(lead),
+                        function(result, event) {}
+                     );
+
+                }
+
+                function deleteLead(leadId) {
+                   Visualforce.remoting.Manager.invokeAction(
+                       '{!$RemoteAction.ExternalDatabaseController.deleteLead}',
+                        leadId,
+                        function(result, event) {}
+                    );
+                }
+
+            </script>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>
