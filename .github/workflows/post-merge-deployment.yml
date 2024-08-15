@@ -1,0 +1,25 @@
+name: Post-Merge Deployment
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup Salesforce CLI
+        uses: salesforcecli/sfdx-action@v1
+        with:
+          version: latest
+
+      - name: Authenticate to Salesforce using Auth URL
+        run: echo "${{ secrets.SDFX_AUTH_URL }}" > sfdx-auth-url.txt && sfdx auth:sfdxurl:store --sfdxurlfile sfdx-auth-url.txt --setalias devOrgForAction
+
+      - name: Deploy to Salesforce Org
+        run: sfdx force:source:deploy --sourcepath force-app --targetusername devOrgForAction
