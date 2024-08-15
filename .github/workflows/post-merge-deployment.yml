@@ -18,11 +18,8 @@ jobs:
         with:
           version: latest
 
-
       - name: Authenticate to Salesforce using Auth URL
-          run: |
-            echo "${{ secrets.SDFX_AUTH_URL }}" > sfdx-auth-url.txt
-            sfdx auth:sfdxurl:store -f sfdx-auth-url.txt -a devOrgForAction
+        run: echo "${{ secrets.SDFX_AUTH_URL }}" > sfdx-auth-url.txt && sfdx auth:sfdxurl:store --sfdxurlfile sfdx-auth-url.txt --setalias devOrgForAction
 
       - name: Deploy to Salesforce Org
         run: sfdx force:source:deploy --sourcepath force-app --targetusername devOrgForAction
