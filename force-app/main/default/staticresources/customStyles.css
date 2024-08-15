@@ -1,0 +1,46 @@
+.page-block-container {
+            margin: 20px;
+        }
+
+.custom-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 18px;
+    text-align: left;
+}
+
+.custom-table th, .custom-table td {
+    padding: 12px 15px;
+}
+
+.custom-table th {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: center;
+}
+
+.custom-table tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.custom-table tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.custom-table tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+
+.custom-table tr:hover {
+    background-color: #f1f1f1;
+}
+.center-button-section {
+    text-align: center;
+}
+
+.centered-button {
+    margin: 20px;
+}
+
+

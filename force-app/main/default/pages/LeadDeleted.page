@@ -1,0 +1,26 @@
+<apex:page id="ThankYou" showHeader="false">
+    <html>
+    <head>
+        <meta charset="UTF-8"/>
+        <title>{!$Label.WB_Thank_You_Title}</title>
+        <apex:stylesheet value="{!$Resource.web2lead}"/>
+    </head>
+    <body>
+    <div class="company-name">{!$Label.Company_Name}</div>
+    <div class="ring">
+        <i style="--clr:#00ff0a;"></i>
+        <i style="--clr:#ff0057;"></i>
+        <i style="--clr:#fffd44;"></i>
+        <div class="form-container">
+            <div id="thankYouMessage" class="center-text white-text larger-text">
+                <h2 style="font-size:2em; margin-left: 0px">{!$Label.Thank_You_Label}</h2>
+                <img src="{!URLFOR($Resource.successImage)}" alt="Success" />
+                <p>{!$Label.Delete_Success_Message}</p>
+                <p>{!$Label.Any_Question_Message}</p>
+                <p>{!$Label.WB_Have_Great_Day}</p>
+            </div>
+        </div>
+    </div>
+    </body>
+    </html>
+</apex:page>

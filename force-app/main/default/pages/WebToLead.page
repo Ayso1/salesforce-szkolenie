@@ -1,0 +1,165 @@
+<apex:page showHeader="false">
+    <html>
+    <head>
+        <meta charset="UTF-8"/>
+        <title>{!$Label.WB_Title}</title>
+        <apex:stylesheet value="{!$Resource.web2lead}"/>
+    </head>
+    <body>
+    <div class="company-name">{!$Label.Company_Name}</div>
+    <div class="ring">
+        <i style="--clr:#00ff0a;"></i>
+        <i style="--clr:#ff0057;"></i>
+        <i style="--clr:#fffd44;"></i>
+        <div class="form-container">
+            <h2>{!$Label.WB_Header_Label}</h2>
+            <form class="form"
+                  action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00DWU000006qINB"
+                  method="POST">
+                <input type="hidden" name="oid" value="00DWU000006qINB"/>
+                <input type="hidden" name="retURL"
+                       value="https://britenet-2e-dev-ed.develop.my.salesforce-sites.com/ThankYou"/>
+                <input id="lead_source" name="lead_source" type="hidden" value="Web"/>
+                <div class="inputBx" id="firstNameContainer">
+                    <input id="first_name" maxlength="40" name="first_name" type="text" required="true"
+                           placeholder="{!$Label.First_Name_Label}  *"/>
+                    <span class="error first-name-error">
+                                <p class="bx bx-error-circle error-icon"></p>
+                                <p class="error-text">{!$Label.WB_First_Name_Error}</p>
+                                <p class="error-text">{!$Label.First_Name_Length_Error}</p>
+                    </span>
+                </div>
+                <div class="inputBx" id="lastNameContainer">
+                    <input id="last_name" maxlength="80" name="last_name" type="text" required="true"
+                           placeholder="{!$Label.Last_Name_Label}  *"/>
+                    <span class="error last-name-error">
+                                <p class="bx bx-error-circle error-icon"></p>
+                                <p class="error-text">{!$Label.WB_Last_Name_Error}</p>
+                                <p class="error-text">{!$Label.Last_Name_Length_Error}</p>
+                    </span>
+                </div>
+                <div class="inputBx" id="phoneContainer">
+                    <input id="phone" maxlength="20" name="phone" type="text" required="true"
+                           placeholder="{!$Label.Phone_Label}  *"/>
+                    <span class="error phone-error">
+                                <p class="bx bx-error-circle error-icon"></p>
+                                <p class="error-text">{!$Label.WB_Phone_Error}</p>
+                                <p class="error-text">{!$Label.Phone_Length_Error}</p>
+                    </span>
+                </div>
+                <div class="inputBx" id="emailContainer">
+                    <input id="email" maxlength="80" name="email" type="email" required="true"
+                           pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="{!$Label.Email_Label}  *"/>
+                    <span class="error email-error">
+                                <p class="bx bx-error-circle error-icon"></p>
+                                <p class="error-text">{!$Label.WB_Email_Error}</p>
+                                <p class="error-text">{!$Label.Email_Length_Error}</p>
+                    </span>
+                </div>
+                <div class="inputBx" id="companyContainer">
+                    <input id="company" maxlength="40" name="company" type="text" required="true"
+                           placeholder="{!$Label.Company_Label}  *"/>
+                    <span class="error company-error">
+                                <p class="bx bx-error-circle error-icon"></p>
+                                <p class="error-text">{!$Label.WB_Company_Error}</p>
+                                <p class="error-text">{!$Label.Company_Length_Error}</p>
+                    </span>
+                </div>
+                <div class="inputBx">
+                    <select id="industry" name="industry">
+                        <option value="" hidden="true">{!$Label.Industry_Label} *</option>
+                        <option value="Agriculture">{!$Label.Agriculture_Label}</option>
+                        <option value="Media">{!$Label.Media_Label}</option>
+                        <option value="Banking">{!$Label.Banking_Label}</option>
+                        <option value="Engineering">{!$Label.Engineering_Label}</option>
+                        <option value="Technology">{!$Label.Technology_Label}</option>
+                        <option value="Healthcare">{!$Label.Healthcare_Label}</option>
+                        <option value="Finance">{!$Label.Finance_Label}</option>
+                        <option value="Education">{!$Label.Education_Label}</option>
+                        <option value="Other">{!$Label.Other_Label}</option>
+                    </select>
+                    <span class="error industry-error">
+                                <p class="bx bx-error-circle error-icon"></p>
+                                <p class="error-text">{!$Label.WB_Industry_Error}</p>
+                            </span>
+                </div>
+                <div class="loader" id="loader">
+                    <div class="lds-roller">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+
+                <div class="inputBx">
+                    <input type="submit" name="submit" value="{!$Label.Submit_Button_Label}"/>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+         function validateForm() {
+            isValid = true;
+            var namePattern = /^[a-zA-Z]+$/;
+            var phonePattern = /^[0-9\s\(\)\-+]+$/;
+            var emailPattern = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/i;
+
+            document.querySelectorAll('.error').forEach(function(el) {
+                el.style.display = 'none';
+            });
+
+            var firstName = document.getElementById('first_name').value;
+            if (!namePattern.test(firstName) || firstName.length < 1 || firstName.length > 39) {
+                console.log('a');
+                document.querySelector('.first-name-error').style.display = 'block';
+                isValid = false;
+            }
+
+            var lastName = document.getElementById('last_name').value;
+            if (!namePattern.test(lastName) || lastName.length < 1 || lastName.length > 39) {
+                document.querySelector('.last-name-error').style.display = 'block';
+                isValid = false;
+            }
+
+            var phone = document.getElementById('phone').value;
+            if (!phonePattern.test(phone) || phone.length < 7 || phone.length > 19) {
+                document.querySelector('.phone-error').style.display = 'block';
+                isValid = false;
+            }
+
+            var email = document.getElementById('email').value;
+            if (!emailPattern.test(email) || email.length < 7 || email.length > 79) {
+                document.querySelector('.email-error').style.display = 'block';
+                isValid = false;
+            }
+
+            var company = document.getElementById('company').value;
+            if (!company || company.length > 39) {
+                document.querySelector('.company-error').style.display = 'block';
+                isValid = false;
+            }
+
+            var industry = document.getElementById('industry').value;
+            if (industry === 'Industry *') {
+                document.querySelector('.industry-error').style.display = 'block';
+                isValid = false;
+            }
+            return isValid;
+        }
+        document.querySelector('.form').addEventListener('submit', function(event) {
+            if (!validateForm()) {
+                event.preventDefault();
+            }else{
+                 document.getElementById('loader').style.visibility = 'visible';
+            }
+        });
+    </script>
+    </body>
+    </html>
+</apex:page>
