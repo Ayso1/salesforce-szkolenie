@@ -14,12 +14,14 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Setup Salesforce CLI
-        uses: salesforcecli/sfdx-action@v1
+        uses: sfdx-actions/setup-sfdx@v1
         with:
           version: latest
 
       - name: Authenticate to Salesforce using Auth URL
-        run: echo "${{ secrets.SDFX_AUTH_URL }}" > sfdx-auth-url.txt && sfdx auth:sfdxurl:store --sfdxurlfile sfdx-auth-url.txt --setalias devOrgForAction
+          run: |
+            echo "${{ secrets.SF_AUTH_URL }}" > sfdx-auth-url.txt
+            sfdx auth:sfdxurl:store -f sfdx-auth-url.txt -a devOrgForAction
 
       - name: Deploy to Salesforce Org for Validation
         run: sfdx force:source:deploy --sourcepath force-app --targetusername MyOrgAlias --checkonly
