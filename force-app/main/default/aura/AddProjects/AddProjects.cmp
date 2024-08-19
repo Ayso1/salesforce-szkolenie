@@ -1,0 +1,128 @@
+<aura:component description="AddProjects" controller="AddProjectsController"
+                implements="force:lightningQuickAction,force:hasRecordId">
+
+    <lightning:notificationsLibrary aura:id="notifLib"/>
+
+    <aura:attribute name="recordId" type="Id"/>
+    <aura:attribute name="designServices" type="List"/>
+    <aura:attribute name="renovationServices" type="List"/>
+    <aura:attribute name="furnitureFittings" type="List"/>
+    <aura:attribute name="furnishingFittingsInstallation" type="List"/>
+    <aura:attribute name="materials" type="List"/>
+    <aura:attribute name="selectedProducts" type="List"/>
+    <aura:attribute name="currentStep" type="Integer" default="0"/>
+    <aura:attribute name="filteredDesignServices" type="List"/>
+    <aura:attribute name="filteredRenovationServices" type="List"/>
+    <aura:attribute name="filteredFurnitureFittings" type="List"/>
+    <aura:attribute name="filteredFurnishingFittingsInstallation" type="List"/>
+    <aura:attribute name="filteredMaterials" type="List"/>
+    <aura:attribute name="realizationTime" type="String"/>
+    <aura:attribute name="todayDate" type="String"/>
+    <aura:attribute name="isNextButtonDisabledStep0" type="Boolean" default="true"/>
+    <aura:attribute name="isNextButtonDisabled" type="Boolean" default="true"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+    <aura:html tag="style">
+        .section-title {
+        font-weight: bold;
+        font-size: 1rem;
+        margin-bottom: 10px;
+        margin-top: 10px;
+        }
+        .summary-item {
+        margin-left: 10px;
+        }
+
+    </aura:html>
+
+    <aura:if isTrue="{!v.currentStep == 0}">
+        <lightning:card title="{!$Label.c.Design_Services_Label}" class="family-card">
+            <aura:iteration items="{!v.designServices}" var="product">
+                <lightning:input aura:id="checkbox" type="checkbox" name="{!product.Id}" label="{!product.Name}"
+                                 value="{!product.Id}" onchange="{!c.handleCheckboxChangeStep0}"/>
+            </aura:iteration>
+        </lightning:card>
+        <lightning:button class="next-button" label="{!$Label.c.Next_Label}" onclick="{!c.goToNextStep}"
+                          disabled="{!v.isNextButtonDisabledStep0}"/>
+    </aura:if>
+
+    <aura:if isTrue="{!v.currentStep == 1}">
+        <div style="margin-bottom: 5px">
+            <lightning:input type="checkbox" label="{!$Label.c.Select_All_Label}"
+                             onchange="{!c.toggleSelectAll}"/>
+        </div>
+        <lightning:card title="{!$Label.c.Renovation_Services_Label}" class="family-card">
+            <aura:iteration items="{!v.renovationServices}" var="product">
+                <lightning:input aura:id="checkbox" type="checkbox" name="{!product.Id}" label="{!product.Name}"
+                                 value="{!product.Id}"/>
+            </aura:iteration>
+        </lightning:card>
+
+        <lightning:card title="{!$Label.c.Furniture_Fittings_Label}" class="family-card">
+            <aura:iteration items="{!v.furnitureFittings}" var="product">
+                <lightning:input aura:id="checkbox" type="checkbox" name="{!product.Id}" label="{!product.Name}"
+                                 value="{!product.Id}"/>
+            </aura:iteration>
+        </lightning:card>
+
+        <lightning:card title="{!$Label.c.Furnishing_Fittings_Installation_Label}" class="family-card">
+            <aura:iteration items="{!v.furnishingFittingsInstallation}" var="product">
+                <lightning:input aura:id="checkbox" type="checkbox" name="{!product.Id}" label="{!product.Name}"
+                                 value="{!product.Id}"/>
+            </aura:iteration>
+        </lightning:card>
+
+        <lightning:card title="{!$Label.c.Materials_Label}" class="family-card">
+            <aura:iteration items="{!v.materials}" var="product">
+                <lightning:input aura:id="checkbox" type="checkbox" name="{!product.Id}" label="{!product.Name}"
+                                 value="{!product.Id}"/>
+            </aura:iteration>
+        </lightning:card>
+
+        <lightning:button class="next-button" label="{!$Label.c.Next_Label}" onclick="{!c.saveAndGoToNextStep}"/>
+    </aura:if>
+
+    <aura:if isTrue="{!v.currentStep == 2}">
+        <lightning:card title="{!$Label.c.Select_Realization_Date_Label}" class="family-card">
+            <lightning:input type="date" aura:id="realizationTime"
+                             label="{!$Label.c.Choose_Realization_Date_Label}"
+                             value="{!v.realizationTime}"
+                             min="{!v.todayDate}"
+                             onchange="{!c.handleDateChange}"/>
+        </lightning:card>
+        <lightning:button class="next-button" label="{!$Label.c.Next_Label}" onclick="{!c.saveFinalStep}"
+                          disabled="{!v.isNextButtonDisabled}"/>
+    </aura:if>
+
+    <aura:if isTrue="{!v.currentStep == 3}">
+        <div style="text-align: center">
+            <h2 style="font-weight: bold; font-size: 1.2rem;">{!$Label.c.Summary_Label}</h2>
+        </div>
+        <div class="section-title">{!$Label.c.Design_Services_Label}</div>
+        <aura:iteration items="{!v.filteredDesignServices}" var="product">
+            <p class="summary-item">{!product.Name}</p>
+        </aura:iteration>
+        <div class="section-title">{!$Label.c.Renovation_Services_Label}</div>
+        <aura:iteration items="{!v.filteredRenovationServices}" var="product">
+            <p class="summary-item">{!product.Name}</p>
+        </aura:iteration>
+        <div class="section-title">{!$Label.c.Furniture_Fittings_Label}</div>
+        <aura:iteration items="{!v.filteredFurnitureFittings}" var="product">
+            <p class="summary-item">{!product.Name}</p>
+        </aura:iteration>
+        <div class="section-title">{!$Label.c.Furnishing_Fittings_Installation_Label}</div>
+        <aura:iteration items="{!v.filteredFurnishingFittingsInstallation}" var="product">
+            <p class="summary-item">{!product.Name}</p>
+        </aura:iteration>
+        <div class="section-title">{!$Label.c.Materials_Label}</div>
+        <aura:iteration items="{!v.filteredMaterials}" var="product">
+            <p class="summary-item">{!product.Name}</p>
+        </aura:iteration>
+        <div class="section-title">{!$Label.c.Realization_Date_Label}</div>
+        <p class="summary-item">{!v.realizationTime}</p>
+        <div style="margin-top: 5px">
+            <lightning:button class="next-button" label="{!$Label.c.Finish_Label}" onclick="{!c.finishProcess}"/>
+        </div>
+    </aura:if>
+</aura:component>

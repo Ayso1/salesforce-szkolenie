@@ -1,0 +1,8 @@
+.THIS .card-container .slds-card__header {
+    justify-content: center;
+    text-align: center;
+}
+
+.THIS .next-button {
+    margin-top: 10px;
+}
