@@ -17,6 +17,41 @@
         <members>SendEmailController</members>
         <members>ProductSelectionController</members>
         <members>AddProjectsController</members>
+        <members>TaskTriggerHandler</members>
+        <members>TaskTriggerHandlerTest</members>
+        <members>ProductController</members>
+        <members>TriggerHandler</members>
+        <members>Util</members>
+        <members>DiscountStrategy</members>
+        <members>DayOfWeekDiscountStrategy</members>
+        <members>DiscountContext</members>
+        <members>MonthlyDiscountStrategy</members>
+        <members>SpecificDayDiscountStrategy</members>
+        <members>SpecificDayMonthDiscountStrategy</members>
+        <members>DateRangeDiscountStrategy</members>
+        <members>RestProduct</members>
+        <members>ProductCallout</members>
+        <members>ProductTriggerHandler</members>
+        <members>AddProjectHelper</members>
+        <members>IntegrationLogger</members>
+        <members>ProductHelper</members>
+        <members>ProductRetryScheduler</members>
+        <members>ProductCalloutRetry</members>
+        <members>ProductRetryBatch</members>
+        <members>IntegrationLoggerTest</members>
+        <members>ProductCalloutTest</members>
+        <members>ProductRetrySchedulerTest</members>
+        <members>ProductTriggerHandlerTest</members>
+        <members>DataCreator</members>
+        <members>TestDataCreator</members>
+        <members>ProductRetryBatchTest</members>
+        <members>ProductBuilder</members>
+        <members>IntegrationLoggerBuilder</members>
+        <members>CasePlatformEventPublisher</members>
+        <members>CaseEventCallout</members>
+        <members>CaseEventDTO</members>
+        <members>NewCaseHelper</members>
+        <members>CaseEventCalloutTest</members>
         <name>ApexClass</name>
     </types>
     <types>
@@ -31,6 +66,9 @@
     <types>
         <members>LeadTrigger</members>
         <members>OpportunityTrigger</members>
+        <members>TaskTrigger</members>
+        <members>ProductTrigger</members>
+        <members>CaseTrigger</members>
         <name>ApexTrigger</name>
     </types>
     <types>
@@ -41,9 +79,134 @@
         <name>StaticResource</name>
     </types>
     <types>
-        <members>ProductSelectionStep1</members>
         <members>AddProjects</members>
         <name>AuraDefinitionBundle</name>
+    </types>
+    <types>
+        <members>creatOrderQuickAction</members>
+        <members>discountManagerTab</members>
+        <members>discountTypeModal</members>
+        <members>newCase</members>
+        <name>LightningComponentBundle</name>
+    </types>
+    <types>
+        <members>Case_Created_Successfully</members>
+        <members>Error_Checking_External_Product</members>
+        <members>Error_Creating_Case</members>
+        <members>New_Case_Label</members>
+        <members>Error_Retrieving_Products</members>
+        <members>Quantity_Label</members>
+        <members>Task_Created_Label</members>
+        <members>Action_Cannot_Be_Undone_Message</members>
+        <members>Action_Label</members>
+        <members>Add_Discount_Label</members>
+        <members>Agriculture_Label</members>
+        <members>Any_Question_Message</members>
+        <members>Apply_Discount_Label</members>
+        <members>Back_Label</members>
+        <members>Banking_Label</members>
+        <members>Cancel_Button</members>
+        <members>Choose_Realization_Date_Label</members>
+        <members>Clear_Label</members>
+        <members>Close_Label</members>
+        <members>Company_Label</members>
+        <members>Company_Length_Error</members>
+        <members>Company_Name</members>
+        <members>Conflicting_Due_Label</members>
+        <members>Create_Discount_Type_Label</members>
+        <members>Create_New_Discount_Type_Label</members>
+        <members>Creating_Tasks_and_Opportunity_Error</members>
+        <members>Delete_Label</members>
+        <members>Delete_Lead_Button</members>
+        <members>Delete_Lead_Confirmation_Message</members>
+        <members>Delete_Success_Message</members>
+        <members>Design_Services_Label</members>
+        <members>DiscountValuePercentage_Placeholder_Label</members>
+        <members>Discount_Applied_Successfully_Label</members>
+        <members>Discount_Management_Label</members>
+        <members>Discount_Period_Label</members>
+        <members>Discount_Period_Required_Label</members>
+        <members>Discount_Price_Label</members>
+        <members>Discount_Type_Created_Successfully_Label</members>
+        <members>Discount_Types_Label</members>
+        <members>Discount_Unit_Label</members>
+        <members>Discount_Value_Percentage_Label</members>
+        <members>Due_Date_Required_Label</members>
+        <members>Edit_Label</members>
+        <members>Edit_Lead_Label</members>
+        <members>Education_Label</members>
+        <members>Email_Label</members>
+        <members>Email_Length_Error</members>
+        <members>End_Date_Label</members>
+        <members>End_Date_Required_Label</members>
+        <members>Engineering_Label</members>
+        <members>Error_Applying_Discount_Label</members>
+        <members>Error_Fetching_Product_Label</members>
+        <members>Error_Loading_Discount_Types_Label</members>
+        <members>Error_Retrieving_Projects</members>
+        <members>External_Database_Title</members>
+        <members>Finance_Label</members>
+        <members>Finish_Label</members>
+        <members>First_Name_Label</members>
+        <members>First_Name_Length_Error</members>
+        <members>Furnishing_Fittings_Installation_Label</members>
+        <members>Furniture_Fittings_Label</members>
+        <members>Healthcare_Label</members>
+        <members>Industry_Label</members>
+        <members>Input_Number_of_Days</members>
+        <members>Last_Name_Label</members>
+        <members>Last_Name_Length_Error</members>
+        <members>Loading</members>
+        <members>Materials_Label</members>
+        <members>Media_Label</members>
+        <members>Name</members>
+        <members>Name_Label</members>
+        <members>Name_Required_Label</members>
+        <members>Next_Label</members>
+        <members>No_Items_Text</members>
+        <members>Other_Label</members>
+        <members>Percent_Label</members>
+        <members>Phone_Label</members>
+        <members>Phone_Length_Error</members>
+        <members>Price_Label</members>
+        <members>Product_Discount_Management_Label</members>
+        <members>Product_Name_Label</members>
+        <members>Project_Label</members>
+        <members>Projects_Label</members>
+        <members>Realization_Date_Label</members>
+        <members>Recurring_Discount_Label</members>
+        <members>Renovation_Services_Label</members>
+        <members>Save_Label</members>
+        <members>Search_Label</members>
+        <members>Select_All_Label</members>
+        <members>Select_Discount_Type_Label</members>
+        <members>Select_Product_Label</members>
+        <members>Select_Realization_Date_Label</members>
+        <members>Start_Date_Label</members>
+        <members>Start_Date_Required_Label</members>
+        <members>Status_Pending_Required_Label</members>
+        <members>Submit_Button_Label</members>
+        <members>Summary_Label</members>
+        <members>Technology_Label</members>
+        <members>Thank_You_Label</members>
+        <members>User_Not_Avalaible_Label</members>
+        <members>Value_Label</members>
+        <members>WB_Company_Description</members>
+        <members>WB_Company_Error</members>
+        <members>WB_Email_Error</members>
+        <members>WB_Feedback_Appreciate_Message</members>
+        <members>WB_First_Name_Error</members>
+        <members>WB_Have_Great_Day</members>
+        <members>WB_Header_Label</members>
+        <members>WB_Industry_Error</members>
+        <members>WB_Last_Name_Error</members>
+        <members>WB_Phone_Error</members>
+        <members>WB_Submission_Received_Message</members>
+        <members>WB_Thank_You_Label</members>
+        <members>WB_Thank_You_Title</members>
+        <members>WB_Title</members>
+        <members>Yes_Label</members>
+        <name>CustomLabel</name>
     </types>
     <version>61.0</version>
 </Package>

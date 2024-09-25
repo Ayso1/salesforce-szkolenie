@@ -1,0 +1,109 @@
+<template>
+    <div class="layout">
+        <div class="sidebar">
+            <lightning-vertical-navigation selected-item={selectedNavItem}>
+                <lightning-vertical-navigation-section label={label.DiscountManagementLabel}>
+                    <lightning-vertical-navigation-item-icon
+                            label={label.AddDiscountLabel}
+                            name="add_discount"
+                            icon-name="utility:add"
+                            onclick={handleNavigation}>
+                    </lightning-vertical-navigation-item-icon>
+
+                    <lightning-vertical-navigation-item-icon
+                            label={label.CreateDiscountType}
+                            name="create_discount_type"
+                            icon-name="utility:settings"
+                            onclick={handleNavigation}>
+                    </lightning-vertical-navigation-item-icon>
+                </lightning-vertical-navigation-section>
+            </lightning-vertical-navigation>
+        </div>
+
+        <div class="main-content">
+            <template if:true={isAddDiscountVisible}>
+                <div class="card-container">
+                    <lightning-card title={label.ProductDiscountManagement}>
+                        <div class="slds-p-around_medium">
+                            <lightning-combobox
+                                    name="products"
+                                    label={label.SelectProduct}
+                                    value={selectedProduct}
+                                    placeholder={label.SelectProduct}
+                                    options={productOptions}
+                                    onchange={handleProductChange}>
+                            </lightning-combobox>
+
+                            <lightning-combobox
+                                    name="discountType"
+                                    label={label.SelectDiscountType}
+                                    value={selectedDiscountType}
+                                    placeholder={label.SelectDiscountType}
+                                    options={discountTypeOptions}
+                                    onchange={handleDiscountTypeChange}
+                                    disabled={isDiscountTypeDisabled}>
+                            </lightning-combobox>
+
+                            <lightning-input
+                                    label={label.DiscountValuePercentage}
+                                    type="number"
+                                    min="0"
+                                    value={discountValue}
+                                    placeholder={label.DiscountValuePercentagePlaceholder}
+                                    onchange={handleDiscountValueChange}
+                                    disabled={isDiscountValueDisabled}>
+                            </lightning-input>
+
+                            <lightning-radio-group
+                                    class="discount-unit"
+                                    name="discountUnit"
+                                    label={label.DiscountUnit}
+                                    options={discountUnitOptions}
+                                    value={selectedDiscountUnit}
+                                    onchange={handleDiscountUnitChange}
+                                    disabled={isDiscountValueDisabled}>
+                            </lightning-radio-group>
+
+                            <lightning-button
+                                    label={label.ApplyDiscount}
+                                    variant="brand"
+                                    onclick={applyDiscount}
+                                    disabled={isApplyButtonDisabled}>
+                            </lightning-button>
+                        </div>
+                    </lightning-card>
+                </div>
+            </template>
+
+            <template if:true={isCreateDiscountTypeVisible}>
+                    <lightning-card class="card-container2" title={label.DiscountTypes}>
+                        <div class="slds-p-around_medium">
+                        <div class="datatable-container">
+                            <lightning-datatable
+                                    key-field="id"
+                                    data={discountTypeData}
+                                    columns={discountTypeColumns}
+                                    hide-checkbox-column="true">
+                            </lightning-datatable>
+                        </div>
+
+                        <div class="button-container">
+                            <lightning-button
+                                    label={label.CreateNewDiscountType}
+                                    variant="brand"
+                                    onclick={handleOpenModal}>
+                            </lightning-button>
+                        </div>
+                        </div>
+                    </lightning-card>
+
+            </template>
+            <template if:true={isModalOpen}>
+                <c-discount-type-modal
+                        onclose={handleCloseModal}
+                        ondiscounttypecreated= {refreshTab}>
+                </c-discount-type-modal>
+            </template>
+        </div>
+    </div>
+</template>
