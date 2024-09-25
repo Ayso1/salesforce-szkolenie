@@ -1,0 +1,18 @@
+.THIS .card-container .slds-card__header {
+    justify-content: center;
+    text-align: center;
+}
+
+.THIS .next-button {
+    margin-top: 10px;
+}
+
+.THIS .wrap-text {
+    white-space: normal !important;
+    word-wrap: break-word;
+}
+
+.THIS .modal-body .modal__content  {
+         max-width: 80rem !important;
+         width: 80% !important;
+}

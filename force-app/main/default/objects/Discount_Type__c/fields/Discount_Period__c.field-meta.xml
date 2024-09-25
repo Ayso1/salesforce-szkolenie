@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Discount_Period__c</fullName>
+    <label>Discount Period</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Day of Week</fullName>
+                <default>false</default>
+                <label>DayOfWeekDiscountStrategy</label>
+            </value>
+            <value>
+                <fullName>Month</fullName>
+                <default>false</default>
+                <label>MonthlyDiscountStrategy</label>
+            </value>
+            <value>
+                <fullName>Specific DD</fullName>
+                <default>false</default>
+                <label>SpecificDayDiscountStrategy</label>
+            </value>
+            <value>
+                <fullName>Specific DD.MM</fullName>
+                <default>false</default>
+                <label>SpecificDayMonthDiscountStrategy</label>
+            </value>
+            <value>
+                <fullName>Specific Date Range</fullName>
+                <default>false</default>
+                <label>DateRangeDiscountStrategy</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

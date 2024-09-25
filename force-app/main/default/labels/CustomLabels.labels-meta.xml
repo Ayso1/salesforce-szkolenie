@@ -1,0 +1,815 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>Action_Cannot_Be_Undone_Message</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Action Cannot Be Undone Message</shortDescription>
+        <value>This action cannot be undone.</value>
+    </labels>
+    <labels>
+        <fullName>Action_Label</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Action Label</shortDescription>
+        <value>Action</value>
+    </labels>
+    <labels>
+        <fullName>Add_Discount_Label</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Add Discount Label</shortDescription>
+        <value>Add Discount</value>
+    </labels>
+    <labels>
+        <fullName>Agriculture_Label</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Agriculture Label</shortDescription>
+        <value>Agriculture</value>
+    </labels>
+    <labels>
+        <fullName>Any_Question_Message</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Any Question Message</shortDescription>
+        <value>If you have any further questions or need assistance, please contact our support team.</value>
+    </labels>
+    <labels>
+        <fullName>Apply_Discount_Label</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Apply Discount Label</shortDescription>
+        <value>Apply Discount</value>
+    </labels>
+    <labels>
+        <fullName>Back_Label</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Back Label</shortDescription>
+        <value>Back</value>
+    </labels>
+    <labels>
+        <fullName>Banking_Label</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Banking Label</shortDescription>
+        <value>Banking</value>
+    </labels>
+    <labels>
+        <fullName>Cancel_Button</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Cancel Button</shortDescription>
+        <value>Cancel</value>
+    </labels>
+    <labels>
+        <fullName>Case_Created_Successfully</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Case created successfully</shortDescription>
+        <value>Case created successfully</value>
+    </labels>
+    <labels>
+        <fullName>Choose_Realization_Date_Label</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Choose Realization Date Label</shortDescription>
+        <value>Choose Realization Date</value>
+    </labels>
+    <labels>
+        <fullName>Clear_Label</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Clear Label</shortDescription>
+        <value>Clear</value>
+    </labels>
+    <labels>
+        <fullName>Close_Label</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Close Label</shortDescription>
+        <value>Close</value>
+    </labels>
+    <labels>
+        <fullName>Company_Label</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Company Label</shortDescription>
+        <value>Company</value>
+    </labels>
+    <labels>
+        <fullName>Company_Length_Error</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Company Length Error</shortDescription>
+        <value>Company name must be between 1 and 40 characters.</value>
+    </labels>
+    <labels>
+        <fullName>Company_Name</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Company Name</shortDescription>
+        <value>Urban Cube</value>
+    </labels>
+    <labels>
+        <fullName>Conflicting_Due_Label</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Conflicting Due Label</shortDescription>
+        <value>Conflicting task due on</value>
+    </labels>
+    <labels>
+        <fullName>Create_Discount_Type_Label</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Create Discount Type Label</shortDescription>
+        <value>Create Discount Type</value>
+    </labels>
+    <labels>
+        <fullName>Create_New_Discount_Type_Label</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Create New Discount Type Label</shortDescription>
+        <value>Create New Discount Type</value>
+    </labels>
+    <labels>
+        <fullName>Creating_Tasks_and_Opportunity_Error</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Creating Tasks and Opportunity Error</shortDescription>
+        <value>An error occurred while creating tasks and opportunity products.</value>
+    </labels>
+    <labels>
+        <fullName>Delete_Label</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Delete Label</shortDescription>
+        <value>Delete</value>
+    </labels>
+    <labels>
+        <fullName>Delete_Lead_Button</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Delete Lead Button</shortDescription>
+        <value>Delete</value>
+    </labels>
+    <labels>
+        <fullName>Delete_Lead_Confirmation_Message</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Delete Lead Confirmation Message</shortDescription>
+        <value>Are you sure you want to delete your contact info?</value>
+    </labels>
+    <labels>
+        <fullName>Delete_Success_Message</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Delete Success Message</shortDescription>
+        <value>Your request has been successfully processed. All your information has been deleted.</value>
+    </labels>
+    <labels>
+        <fullName>Design_Services_Label</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Design Services Label</shortDescription>
+        <value>Design Services</value>
+    </labels>
+    <labels>
+        <fullName>DiscountValuePercentage_Placeholder_Label</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>DiscountValuePercentage Placeholder Label</shortDescription>
+        <value>Enter discount value percentage</value>
+    </labels>
+    <labels>
+        <fullName>Discount_Applied_Successfully_Label</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Discount Applied Successfully Label</shortDescription>
+        <value>Discount applied successfully</value>
+    </labels>
+    <labels>
+        <fullName>Discount_Management_Label</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Discount Management Label</shortDescription>
+        <value>Discount Management</value>
+    </labels>
+    <labels>
+        <fullName>Discount_Period_Label</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Discount Period Label</shortDescription>
+        <value>Discount Period</value>
+    </labels>
+    <labels>
+        <fullName>Discount_Period_Required_Label</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Discount Period Required Label</shortDescription>
+        <value>Discount Period is required.</value>
+    </labels>
+    <labels>
+        <fullName>Discount_Price_Label</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Discount Price Label</shortDescription>
+        <value>Discount Price</value>
+    </labels>
+    <labels>
+        <fullName>Discount_Type_Created_Successfully_Label</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Discount Type Created Successfully Label</shortDescription>
+        <value>Discount Type created successfully</value>
+    </labels>
+    <labels>
+        <fullName>Discount_Types_Label</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Discount Types Label</shortDescription>
+        <value>Discount Types</value>
+    </labels>
+    <labels>
+        <fullName>Discount_Unit_Label</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Discount Unit Label</shortDescription>
+        <value>Discount Unit</value>
+    </labels>
+    <labels>
+        <fullName>Discount_Value_Percentage_Label</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Discount Value/Percentage Label</shortDescription>
+        <value>Discount Value/Percentage</value>
+    </labels>
+    <labels>
+        <fullName>Due_Date_Required_Label</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Due Date Required Label</shortDescription>
+        <value>Due Date is required.</value>
+    </labels>
+    <labels>
+        <fullName>Edit_Label</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Edit Label</shortDescription>
+        <value>Edit</value>
+    </labels>
+    <labels>
+        <fullName>Edit_Lead_Label</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Edit Lead Label</shortDescription>
+        <value>Edit Lead</value>
+    </labels>
+    <labels>
+        <fullName>Education_Label</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Education Label</shortDescription>
+        <value>Education</value>
+    </labels>
+    <labels>
+        <fullName>Email_Label</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Email Label</shortDescription>
+        <value>Email</value>
+    </labels>
+    <labels>
+        <fullName>Email_Length_Error</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Email Length Error</shortDescription>
+        <value>Email must be between 1 and 80 characters.</value>
+    </labels>
+    <labels>
+        <fullName>End_Date_Label</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>End Date Label</shortDescription>
+        <value>End Date</value>
+    </labels>
+    <labels>
+        <fullName>End_Date_Required_Label</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>End Date Required Label</shortDescription>
+        <value>End Date is required.</value>
+    </labels>
+    <labels>
+        <fullName>Engineering_Label</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Engineering Label</shortDescription>
+        <value>Engineering</value>
+    </labels>
+    <labels>
+        <fullName>Error_Applying_Discount_Label</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Error Applying Discount Label</shortDescription>
+        <value>Error applying discount</value>
+    </labels>
+    <labels>
+        <fullName>Error_Checking_External_Product</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Error checking external product</shortDescription>
+        <value>Error checking external product</value>
+    </labels>
+    <labels>
+        <fullName>Error_Creating_Case</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Error creating case</shortDescription>
+        <value>Error creating case</value>
+    </labels>
+    <labels>
+        <fullName>Error_Fetching_Product_Label</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Error Fetching Product Label</shortDescription>
+        <value>Error fetching product options</value>
+    </labels>
+    <labels>
+        <fullName>Error_Loading_Discount_Types_Label</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Error Loading Discount Types Label</shortDescription>
+        <value>Error loading discount types</value>
+    </labels>
+    <labels>
+        <fullName>Error_Retrieving_Products</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Error Retrieving Products</shortDescription>
+        <value>An error occurred while retrieving products.</value>
+    </labels>
+    <labels>
+        <fullName>Error_Retrieving_Projects</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Error Retrieving Projects</shortDescription>
+        <value>An error occurred while retrieving projects.</value>
+    </labels>
+    <labels>
+        <fullName>External_Database_Title</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>External Database Title</shortDescription>
+        <value>External Database</value>
+    </labels>
+    <labels>
+        <fullName>Finance_Label</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Finance Label</shortDescription>
+        <value>Finance</value>
+    </labels>
+    <labels>
+        <fullName>Finish_Label</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Finish Label</shortDescription>
+        <value>Finish</value>
+    </labels>
+    <labels>
+        <fullName>First_Name_Label</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>First Name Label</shortDescription>
+        <value>First Name</value>
+    </labels>
+    <labels>
+        <fullName>First_Name_Length_Error</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>First Name Length Error</shortDescription>
+        <value>First name must be between 1 and 40 characters.</value>
+    </labels>
+    <labels>
+        <fullName>Furnishing_Fittings_Installation_Label</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Furnishing &amp; Fittings Installation Label</shortDescription>
+        <value>Furnishing &amp; Fittings Installation</value>
+    </labels>
+    <labels>
+        <fullName>Furniture_Fittings_Label</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Furniture &amp; Fittings Label</shortDescription>
+        <value>Furniture &amp; Fittings</value>
+    </labels>
+    <labels>
+        <fullName>Healthcare_Label</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Healthcare Label</shortDescription>
+        <value>Healthcare</value>
+    </labels>
+    <labels>
+        <fullName>Industry_Label</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Industry Label</shortDescription>
+        <value>Industry</value>
+    </labels>
+    <labels>
+        <fullName>Input_Number_of_Days</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Input Number of Days</shortDescription>
+        <value>Enter the number of days per job</value>
+    </labels>
+    <labels>
+        <fullName>Last_Name_Label</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Last Name Label</shortDescription>
+        <value>Last Name</value>
+    </labels>
+    <labels>
+        <fullName>Last_Name_Length_Error</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Last Name Length Error</shortDescription>
+        <value>Last name must be between 1 and 80 characters.</value>
+    </labels>
+    <labels>
+        <fullName>Loading</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Loading</shortDescription>
+        <value>Loading...</value>
+    </labels>
+    <labels>
+        <fullName>Materials_Label</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Materials Label</shortDescription>
+        <value>Materials</value>
+    </labels>
+    <labels>
+        <fullName>Media_Label</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Media Label</shortDescription>
+        <value>Media</value>
+    </labels>
+    <labels>
+        <fullName>Name</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Name</shortDescription>
+        <value>Name</value>
+    </labels>
+    <labels>
+        <fullName>Name_Label</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Name Label</shortDescription>
+        <value>Name</value>
+    </labels>
+    <labels>
+        <fullName>Name_Required_Label</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Name Required Label</shortDescription>
+        <value>Name is required.</value>
+    </labels>
+    <labels>
+        <fullName>New_Case_Label</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>New Case Label</shortDescription>
+        <value>New Case</value>
+    </labels>
+    <labels>
+        <fullName>Next_Label</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Next Label</shortDescription>
+        <value>Next</value>
+    </labels>
+    <labels>
+        <fullName>No_Items_Text</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>No Items Text</shortDescription>
+        <value>No items to display.</value>
+    </labels>
+    <labels>
+        <fullName>Other_Label</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Other Label</shortDescription>
+        <value>Other</value>
+    </labels>
+    <labels>
+        <fullName>Percent_Label</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Percent Label</shortDescription>
+        <value>Percent</value>
+    </labels>
+    <labels>
+        <fullName>Phone_Label</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Phone Label</shortDescription>
+        <value>Phone</value>
+    </labels>
+    <labels>
+        <fullName>Phone_Length_Error</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Phone Length Error</shortDescription>
+        <value>Phone number must be between 1 and 20 characters.</value>
+    </labels>
+    <labels>
+        <fullName>Price_Label</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Price Label</shortDescription>
+        <value>Price</value>
+    </labels>
+    <labels>
+        <fullName>Product_Discount_Management_Label</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Product Discount Management Label</shortDescription>
+        <value>Product Discount Management</value>
+    </labels>
+    <labels>
+        <fullName>Product_Name_Label</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Product Name Label</shortDescription>
+        <value>Product Name</value>
+    </labels>
+    <labels>
+        <fullName>Project_Label</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Project Label</shortDescription>
+        <value>Project</value>
+    </labels>
+    <labels>
+        <fullName>Projects_Label</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Projects Label</shortDescription>
+        <value>Projects</value>
+    </labels>
+    <labels>
+        <fullName>Quantity_Label</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Quantity Label</shortDescription>
+        <value>Quantity</value>
+    </labels>
+    <labels>
+        <fullName>Realization_Date_Label</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Realization Date Label</shortDescription>
+        <value>Realization Date</value>
+    </labels>
+    <labels>
+        <fullName>Recurring_Discount_Label</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Recurring Discount Label</shortDescription>
+        <value>Recurring Discount</value>
+    </labels>
+    <labels>
+        <fullName>Renovation_Services_Label</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Renovation Services Label</shortDescription>
+        <value>Renovation Services</value>
+    </labels>
+    <labels>
+        <fullName>Save_Label</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Save Label</shortDescription>
+        <value>Save</value>
+    </labels>
+    <labels>
+        <fullName>Search_Label</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Search Label</shortDescription>
+        <value>Search</value>
+    </labels>
+    <labels>
+        <fullName>Select_All_Label</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Select All Label</shortDescription>
+        <value>Select All</value>
+    </labels>
+    <labels>
+        <fullName>Select_Discount_Type_Label</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Select Discount Type Label</shortDescription>
+        <value>Select Discount Type</value>
+    </labels>
+    <labels>
+        <fullName>Select_Product_Label</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Select Product Label</shortDescription>
+        <value>Select Product</value>
+    </labels>
+    <labels>
+        <fullName>Select_Realization_Date_Label</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Select Realization Date Label</shortDescription>
+        <value>Select Realization Date</value>
+    </labels>
+    <labels>
+        <fullName>Start_Date_Label</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Start Date Label</shortDescription>
+        <value>Start Date</value>
+    </labels>
+    <labels>
+        <fullName>Start_Date_Required_Label</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Start Date Required Label</shortDescription>
+        <value>Start Date is required.</value>
+    </labels>
+    <labels>
+        <fullName>Status_Pending_Required_Label</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Status Pending Required Label</shortDescription>
+        <value>Status must be &quot;Pending&quot; when the task is created.</value>
+    </labels>
+    <labels>
+        <fullName>Submit_Button_Label</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Submit Button Label</shortDescription>
+        <value>Submit</value>
+    </labels>
+    <labels>
+        <fullName>Summary_Label</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Summary Label</shortDescription>
+        <value>Summary</value>
+    </labels>
+    <labels>
+        <fullName>Task_Created_Label</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Task Created Label</shortDescription>
+        <value>Tasks have been created successfully.</value>
+    </labels>
+    <labels>
+        <fullName>Technology_Label</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Technology Label</shortDescription>
+        <value>Technology</value>
+    </labels>
+    <labels>
+        <fullName>Thank_You_Label</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Thank You Label</shortDescription>
+        <value>Thank You</value>
+    </labels>
+    <labels>
+        <fullName>User_Not_Avalaible_Label</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>User Not Availaible Label</shortDescription>
+        <value>The user is not available during the selected time period.</value>
+    </labels>
+    <labels>
+        <fullName>Value_Label</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Value Label</shortDescription>
+        <value>Value</value>
+    </labels>
+    <labels>
+        <fullName>WB_Company_Description</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>WB Company Description</shortDescription>
+        <value>Welcome to Urban Cube, where innovative architecture meets exceptional design. We specialize in creating spaces that are not only functional but also inspire and elevate the human experience.</value>
+    </labels>
+    <labels>
+        <fullName>WB_Company_Error</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>WB Company Error</shortDescription>
+        <value>Please enter a valid Company Name</value>
+    </labels>
+    <labels>
+        <fullName>WB_Email_Error</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>WB Email Error</shortDescription>
+        <value>Please enter a valid Email</value>
+    </labels>
+    <labels>
+        <fullName>WB_Feedback_Appreciate_Message</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>WB Feedback Appreciate Message</shortDescription>
+        <value>We appreciate your feedback and will get back to you shortly.</value>
+    </labels>
+    <labels>
+        <fullName>WB_First_Name_Error</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>WB First Name Error</shortDescription>
+        <value>Please enter a valid First Name</value>
+    </labels>
+    <labels>
+        <fullName>WB_Have_Great_Day</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>WB Have Great Day</shortDescription>
+        <value>Have a great day!</value>
+    </labels>
+    <labels>
+        <fullName>WB_Header_Label</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>WB Header Label</shortDescription>
+        <value>Contact us</value>
+    </labels>
+    <labels>
+        <fullName>WB_Industry_Error</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>WB Industry Error</shortDescription>
+        <value>Please select an Industry</value>
+    </labels>
+    <labels>
+        <fullName>WB_Last_Name_Error</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>WB Last Name Error</shortDescription>
+        <value>Please enter a valid Last Name</value>
+    </labels>
+    <labels>
+        <fullName>WB_Phone_Error</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>WB Phone Error</shortDescription>
+        <value>Please enter a valid Phone</value>
+    </labels>
+    <labels>
+        <fullName>WB_Submission_Received_Message</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>WB Submission Received Message</shortDescription>
+        <value>Your submission has been received.</value>
+    </labels>
+    <labels>
+        <fullName>WB_Thank_You_Label</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>WB Thank You Label</shortDescription>
+        <value>Thank you for your submission!</value>
+    </labels>
+    <labels>
+        <fullName>WB_Thank_You_Title</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>WB Thank You Title</shortDescription>
+        <value>Thank You!</value>
+    </labels>
+    <labels>
+        <fullName>WB_Title</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>WB Title</shortDescription>
+        <value>Lead Capture Form</value>
+    </labels>
+    <labels>
+        <fullName>Yes_Label</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Yes Label</shortDescription>
+        <value>Yes</value>
+    </labels>
+</CustomLabels>

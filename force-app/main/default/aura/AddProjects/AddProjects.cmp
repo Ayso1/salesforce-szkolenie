@@ -1,0 +1,220 @@
+<aura:component description="AddProjects" controller="AddProjectsController"
+                implements="force:lightningQuickAction,force:hasRecordId">
+
+    <lightning:notificationsLibrary aura:id="notifLib"/>
+
+    <ltng:require styles="{!$Resource.custommodalcss}"/>
+
+    <aura:attribute name="recordId" type="Id"/>
+
+    <aura:attribute name="projects" type="List"/>
+    <aura:attribute name="allProjectProducts" type="List"/>
+    <aura:attribute name="designServices" type="List"/>
+    <aura:attribute name="renovationServices" type="List"/>
+    <aura:attribute name="furnitureFittings" type="List"/>
+    <aura:attribute name="furnishingFittingsInstallation" type="List"/>
+    <aura:attribute name="materials" type="List"/>
+    <aura:attribute name="selectedProducts" type="List"/>
+    <aura:attribute name="selectedProjects" type="List"/>
+    <aura:attribute name="todayDate" type="String"/>
+    <aura:attribute name="productColumns" type="List"/>
+    <aura:attribute name="selectedProductsColumns" type="List"/>
+    <aura:attribute name="draftValues" type="List" default="[]"/>
+    <aura:attribute name="storedSelectedProducts" type="List" default="[]"/>
+
+    <aura:attribute name="inputValueDesign" type="Integer"/>
+    <aura:attribute name="inputValueRenovation" type="Integer"/>
+    <aura:attribute name="inputValueFurniture" type="Integer"/>
+    <aura:attribute name="inputValueFurnishing" type="Integer"/>
+    <aura:attribute name="inputValueMaterials" type="Integer"/>
+    <aura:attribute name="totalDays" type="Integer" default="0"/>
+    <aura:attribute name="currentStep" type="Integer" default="0"/>
+
+    <aura:attribute name="realizationTime" type="String"/>
+    <aura:attribute name="startDate" type="String"/>
+
+    <aura:attribute name="isNextButtonDisabledStep0" type="Boolean" default="true"/>
+    <aura:attribute name="isNextButtonDisabledStep1" type="Boolean" default="true"/>
+    <aura:attribute name="isNextButtonDisabledStep2" type="Boolean" default="true"/>
+    <aura:attribute name="isDesignServicesInputVisible" type="Boolean" default="false"/>
+    <aura:attribute name="isRenovationServicesTableInputVisible" type="Boolean" default="false"/>
+    <aura:attribute name="isFurnitureFittingsTableInputVisible" type="Boolean" default="false"/>
+    <aura:attribute name="isFurnishingFittingsInstallationTableInputVisible" type="Boolean" default="false"/>
+    <aura:attribute name="isMaterialsTableInputVisible" type="Boolean" default="false"/>
+    <aura:attribute name="isRealizationDateDisabled" type="Boolean" default="true"/>
+    <aura:attribute name="isSelectRealizationDateVisible" type="Boolean" default="false"/>
+
+    <aura:attribute name="userAvailabilityMap" type="Map"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+    <aura:if isTrue="{!v.currentStep == 0}">
+
+        <div style="text-align: center; margin-bottom: 20px;">
+            <h2 style="font-weight: bold; font-size: 1.5rem;">{!$Label.c.Projects_Label}</h2>
+        </div>
+
+        <aura:iteration items="{!v.projects}" var="project">
+            <lightning:input aura:id="checkbox" type="checkbox" name="{!project.Id}" label="{!project.Name}"
+                             value="{!project.Id}" onchange="{!c.handleCheckboxChangeStep0}"/>
+        </aura:iteration>
+
+        <div style="margin-top: 5px">
+            <lightning:button class="next-button" label="{!$Label.c.Next_Label}" onclick="{!c.goToNextStep}"
+                              disabled="{!v.isNextButtonDisabledStep0}"/>
+        </div>
+    </aura:if>
+
+    <aura:if isTrue="{!v.currentStep == 1}">
+        <div style="margin-bottom: 5px">
+            <lightning:input type="checkbox" label="{!$Label.c.Select_All_Label}"
+                             onchange="{!c.toggleSelectAll}"/>
+        </div>
+
+        <lightning:card title="{!$Label.c.Design_Services_Label}" class="family-card">
+            <lightning:datatable
+                    aura:id="designServicesTable"
+                    keyField="Id"
+                    data="{!v.designServices}"
+                    columns="{!v.productColumns}"
+                    selectedRows="{!v.selectedProducts}"
+                    draftValues="{!v.draftValues}"
+                    onrowselection="{!c.handleSelect}"
+                    onsave="{!c.handleSave}"
+            />
+
+
+            <aura:if isTrue="{!v.isDesignServicesInputVisible}">
+                <lightning:input aura:id="designServicesTableInput" type="number" value="{!v.inputValueDesign}"
+                                 onchange="{!c.handleInputChange}" label="{!$Label.c.Input_Number_of_Days}"/>
+            </aura:if>
+
+        </lightning:card>
+
+        <lightning:card title="{!$Label.c.Renovation_Services_Label}" class="family-card">
+            <lightning:datatable
+                    aura:id="renovationServicesTable"
+                    keyField="Id"
+                    data="{!v.renovationServices}"
+                    columns="{!v.productColumns}"
+                    selectedRows="{!v.selectedProducts}"
+                    draftValues="{!v.draftValues}"
+                    onrowselection="{!c.handleSelect}"
+                    onsave="{!c.handleSave}"
+
+            />
+            <aura:if isTrue="{!v.isRenovationServicesTableInputVisible}">
+                <lightning:input aura:id="renovationServicesTableInput" type="number" value="{!v.inputValueRenovation}"
+                                 onchange="{!c.handleInputChange}" label="{!$Label.c.Input_Number_of_Days}"/>
+            </aura:if>
+        </lightning:card>
+
+        <lightning:card title="{!$Label.c.Furniture_Fittings_Label}" class="family-card">
+            <lightning:datatable
+                    aura:id="furnitureFittingsTable"
+                    keyField="Id"
+                    data="{!v.furnitureFittings}"
+                    columns="{!v.productColumns}"
+                    selectedRows="{!v.selectedProducts}"
+                    draftValues="{!v.draftValues}"
+                    onrowselection="{!c.handleSelect}"
+                    onsave="{!c.handleSave}"
+
+            />
+            <aura:if isTrue="{!v.isFurnitureFittingsTableInputVisible}">
+                <lightning:input aura:id="furnitureFittingsTableInput" type="number" value="{!v.inputValueFurniture}"
+                                 onchange="{!c.handleInputChange}" label="{!$Label.c.Input_Number_of_Days}"/>
+            </aura:if>
+        </lightning:card>
+
+        <lightning:card title="{!$Label.c.Furnishing_Fittings_Installation_Label}" class="family-card">
+            <lightning:datatable
+                    aura:id="furnishingFittingsInstallationTable"
+                    keyField="Id"
+                    data="{!v.furnishingFittingsInstallation}"
+                    columns="{!v.productColumns}"
+                    selectedRows="{!v.selectedProducts}"
+                    draftValues="{!v.draftValues}"
+                    onrowselection="{!c.handleSelect}"
+                    onsave="{!c.handleSave}"
+
+            />
+            <aura:if isTrue="{!v.isFurnishingFittingsInstallationTableInputVisible}">
+                <lightning:input aura:id="furnishingFittingsInstallationTableInput" type="number"
+                                 value="{!v.inputValueFurnishing}"
+                                 onchange="{!c.handleInputChange}" label="{!$Label.c.Input_Number_of_Days}"/>
+            </aura:if>
+        </lightning:card>
+
+        <lightning:card title="{!$Label.c.Materials_Label}" class="family-card">
+            <lightning:datatable
+                    aura:id="materialsTable"
+                    keyField="Id"
+                    data="{!v.materials}"
+                    columns="{!v.productColumns}"
+                    selectedRows="{!v.selectedProducts}"
+                    draftValues="{!v.draftValues}"
+                    onrowselection="{!c.handleSelect}"
+                    onsave="{!c.handleSave}"
+
+            />
+            <aura:if isTrue="{!v.isMaterialsTableInputVisible}">
+                <lightning:input aura:id="materialsTableInput" type="number" onchange="{!c.handleInputChange}"
+                                 label="{!$Label.c.Input_Number_of_Days}" value="{!v.inputValueMaterials}"/>
+            </aura:if>
+        </lightning:card>
+
+        <aura:if isTrue="{!v.isSelectRealizationDateVisible}">
+            <lightning:card title="{!$Label.c.Select_Realization_Date_Label}" class="family-card">
+                <lightning:input type="date" aura:id="startDate"
+                                 label="{!$Label.c.Start_Date_Label}"
+                                 value="{!v.startDate}"
+                                 onchange="{!c.handleStartDateChange}"/>
+
+                <lightning:input type="date" aura:id="realizationTime"
+                                 label="{!$Label.c.Choose_Realization_Date_Label}"
+                                 value="{!v.realizationTime}"
+                                 min="{!v.todayDate}"
+                                 onchange="{!c.handleDateChange}"
+                                 disabled="{!v.isRealizationDateDisabled}"
+                />
+            </lightning:card>
+        </aura:if>
+
+        <lightning:button class="back-button" label="{!$Label.c.Back_Label}" onclick="{!c.goToPreviousStep}"/>
+        <lightning:button class="next-button" disabled="{!v.isNextButtonDisabledStep1}" label="{!$Label.c.Save_Label}"
+                          onclick="{!c.saveAndGoToNextStep}"/>
+    </aura:if>
+
+    <aura:if isTrue="{!v.currentStep == 2}">
+        <div style="text-align: center">
+            <h2 style="font-weight: bold; font-size: 1.2rem;">{!$Label.c.Summary_Label}</h2>
+        </div>
+
+        <lightning:datatable
+                aura:id="selectedProductsTable"
+                keyField="Id"
+                data="{!v.selectedProducts}"
+                columns="{!v.selectedProductsColumns}"
+                hideCheckboxColumn="true"
+        />
+
+        <div class="section-title" style="font-size: 14px; ">
+            {!$Label.c.Start_Date_Label}:
+            <span class="summary-item" style="font-size: 12px; font-weight: normal; margin-left: 10px;">
+        {!v.startDate}
+    </span>
+        </div>
+        <div class="section-title" style="font-size: 14px; ">
+            {!$Label.c.Realization_Date_Label}:
+            <span class="summary-item" style="font-size: 12px; font-weight: normal; margin-left: 10px;">
+        {!v.realizationTime}
+    </span>
+        </div>
+
+        <div style="margin-top: 5px">
+            <lightning:button class="save-button" label="{!$Label.c.Finish_Label}" onclick="{!c.finishProcess}"/>
+        </div>
+    </aura:if>
+
+</aura:component>

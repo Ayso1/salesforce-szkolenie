@@ -1,0 +1,30 @@
+<template>
+    <lightning-quick-action-panel header={label.NewCaseLabel}>
+
+        <template if:true={isLoading}>
+            <div class="spinner-container">
+                <lightning-spinner></lightning-spinner>
+            </div>
+        </template>
+
+        <lightning-record-edit-form
+                object-api-name="Case"
+                onsuccess={handleSuccess}
+                onerror={handleError}
+                onsubmit={handleSubmit}>
+
+            <lightning-input-field field-name="ContactId"></lightning-input-field>
+
+            <lightning-input-field field-name="Status" required></lightning-input-field>
+
+            <lightning-input-field field-name="Subject" onchange={handleFieldChange} required></lightning-input-field>
+
+            <lightning-input-field field-name="Description" onchange={handleFieldChange} required></lightning-input-field>
+
+            <div class="slds-m-top_medium slds-grid slds-grid_align-spread">
+                <lightning-button variant="neutral" label={label.Cancel} onclick={handleCancel}></lightning-button>
+                <lightning-button variant="brand" label={label.Save} type="submit"></lightning-button>
+            </div>
+        </lightning-record-edit-form>
+    </lightning-quick-action-panel>
+</template>
